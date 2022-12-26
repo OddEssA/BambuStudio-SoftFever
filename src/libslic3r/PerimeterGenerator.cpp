@@ -1016,7 +1016,7 @@ void PerimeterGenerator::process_classic()
             }
 #endif
             // SoftFever: don't filter out tiny gap fills for first and top layer. So that the print looks better :)
-            if (this->layer_id != 0 && this->upper_slices != nullptr)
+            // if (this->layer_id != 0 && this->upper_slices != nullptr)
             {
                 polylines.erase(std::remove_if(polylines.begin(), polylines.end(),
                     [&](const ThickPolyline& p) {
