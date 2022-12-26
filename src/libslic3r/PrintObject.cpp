@@ -1209,7 +1209,7 @@ void PrintObject::discover_vertical_shells()
     PROFILE_FUNC();
 
     BOOST_LOG_TRIVIAL(info) << "Discovering vertical shells..." << log_memory_info();
-
+    return;
     struct DiscoverVerticalShellsCacheEntry
     {
         // Collected polygons, offsetted
