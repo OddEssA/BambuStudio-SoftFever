@@ -87,6 +87,7 @@ wxDECLARE_EVENT(EVT_REPAIR_MODEL,        wxCommandEvent);
 wxDECLARE_EVENT(EVT_FILAMENT_COLOR_CHANGED,        wxCommandEvent);
 wxDECLARE_EVENT(EVT_INSTALL_PLUGIN_NETWORKING,        wxCommandEvent);
 wxDECLARE_EVENT(EVT_INSTALL_PLUGIN_HINT,        wxCommandEvent);
+wxDECLARE_EVENT(EVT_UPDATE_PLUGINS_WHEN_LAUNCH,        wxCommandEvent);
 wxDECLARE_EVENT(EVT_PREVIEW_ONLY_MODE_HINT,        wxCommandEvent);
 wxDECLARE_EVENT(EVT_GLCANVAS_COLOR_MODE_CHANGED,   SimpleEvent);
 
@@ -226,9 +227,8 @@ public:
     void refresh_print();
 
     // SoftFever
-    void calib_pa(bool bowden = false);
+    void calib_pa(bool line_method = true, bool bowden = false);
     void calib_flowrate(int pass);
-    ModelObject* add_part(ModelObject* model_object, std::string input_file, Vec3d move, Vec3d scale);
 
     //BBS: add only gcode mode
     bool only_gcode_mode() { return m_only_gcode; }
